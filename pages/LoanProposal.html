@@ -1,12 +1,16 @@
 ﻿<div>
     <form name="LoanProposalForm">
+        <textarea>abc  {{clientData}}</textarea>
         <h1>LoanProposal</h1>
         <br />Amount
         <input type="text" name="Amount" ng-model="LoanProposal.Amount" />
         <br />CenterName
         <input type="text" name="CenterName" ng-model="LoanProposal.CenterName" />
         <br />ClientId
-        <input type="text" name="ClientId" ng-model="LoanProposal.ClientId" />
+        <!--<input type="text" name="ClientId" ng-model="LoanProposal.ClientId" />-->
+        <select ng-model="LoanProposal.ClientId">
+            <option ng-repeat="clnt in clientData" value="{{clnt.$id}}">{{clnt.ClientName}}</option>
+        </select>
         <br />ClientName
         <input type="text" name="ClientName" ng-model="LoanProposal.ClientName" />
         <br />Comment

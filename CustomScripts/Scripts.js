@@ -93,6 +93,8 @@ financeApp.controller('CrtController', function ($scope, $firebaseArray) {
 });
 financeApp.controller('LoanProposalController', function ($scope, $firebaseArray) {
     var rootRef = new Firebase("https://financeapp2.firebaseio.com");
+    $scope.clientData = $firebaseArray(rootRef.child('Client'));
+
     $scope.AddRec = function () {
         rootRef.child('LoanProposal').push($scope.LoanProposal);
         $scope.LoanProposal = null;
