@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html ng-app="financeApp">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/1.1.4/angularfire.min.js"></script>
+    
+    <script src="CustomScripts/Scripts.js"></script>
+</head>
+<body ng-controller="mainController">
+    <!--Temporary Menu, change with Theme-->
+    <div class="menu">
+        <ul class="menu-container">
+            <li><a href="#home"> Home</a></li>
+            <li><a href="#staff"> Staff</a></li>
+        </ul>
+    </div>
+    <!--Menu End-->
+
+    <!--I'm adding Forms here, baki ka call pe batata hu-->
+    <div ng-view></div>
+    <!--View End-->
+</body>
+</html>
