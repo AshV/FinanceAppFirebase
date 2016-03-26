@@ -111,7 +111,7 @@ financeApp.controller('TargetController', function ($scope, $firebaseArray) {
     var rootRef = new Firebase("https://financeapp2.firebaseio.com");
     $scope.AddRec = function () {
         rootRef.child('Target').push($scope.Target);
-        $scope.StTargetaff = null;
+        $scope.Target = null;
     }
 });
 
