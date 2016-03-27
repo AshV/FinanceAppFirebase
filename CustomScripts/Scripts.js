@@ -1,4 +1,6 @@
-﻿var financeApp = angular.module('financeApp', ['ngRoute','firebase']);
+﻿var ROOTREF = "https://financeapp2.firebaseio.com";
+
+var financeApp = angular.module('financeApp', ['ngRoute', 'firebase']);
 
 // configure our routes
 financeApp.config(function ($routeProvider) {
@@ -53,47 +55,49 @@ financeApp.config(function ($routeProvider) {
 });
 
 financeApp.controller('mainController', function ($scope, $firebaseObject) {
-    var rootRef = new Firebase("https://financeapp2.firebaseio.com/");
+    var rootRef = new Firebase(ROOTREF);
   
 });
 financeApp.controller('BankSignatoryController', function ($scope, $firebaseArray) {
-    var rootRef = new Firebase("https://financeapp2.firebaseio.com");
+    var rootRef = new Firebase(ROOTREF);
     $scope.AddRec = function () {
         rootRef.child('BankSignatory').push($scope.BankSignatory);
         $scope.BankSignatory = null;
     }
 });
 financeApp.controller('centerController', function ($scope, $firebaseArray) {
-    var rootRef = new Firebase("https://financeapp2.firebaseio.com");
+    var rootRef = new Firebase(ROOTREF);
     $scope.AddRec = function () {
         rootRef.child('center').push($scope.center);
         $scope.center = null;
     }
 });
 financeApp.controller('ClientController', function ($scope, $firebaseArray) {
-    var rootRef = new Firebase("https://financeapp2.firebaseio.com");
+    var rootRef = new Firebase(ROOTREF);
     $scope.AddRec = function () {
         rootRef.child('Client').push($scope.Client);
         $scope.Client = null;
     }
 });
 financeApp.controller('client_transfarController', function ($scope, $firebaseArray) {
-    var rootRef = new Firebase("https://financeapp2.firebaseio.com");
+    var rootRef = new Firebase(ROOTREF);
     $scope.AddRec = function () {
         rootRef.child('client_transfar').push($scope.client_transfar);
         $scope.client_transfar = null;
     }
 });
 financeApp.controller('CrtController', function ($scope, $firebaseArray) {
-    var rootRef = new Firebase("https://financeapp2.firebaseio.com");
+    var rootRef = new Firebase(ROOTREF);
     $scope.AddRec = function () {
         rootRef.child('Crt').push($scope.Crt);
         $scope.Crt = null;
     }
 });
 financeApp.controller('LoanProposalController', function ($scope, $firebaseArray) {
-    var rootRef = new Firebase("https://financeapp2.firebaseio.com");
+    var rootRef = new Firebase(ROOTREF);
     $scope.clientData = $firebaseArray(rootRef.child('Client'));
+    $scope.staffData = $firebaseArray(rootRef.child('Staff'));
+    $scope.centerData = $firebaseArray(rootRef.child('center'));
 
     $scope.AddRec = function () {
         rootRef.child('LoanProposal').push($scope.LoanProposal);
@@ -102,7 +106,7 @@ financeApp.controller('LoanProposalController', function ($scope, $firebaseArray
 });
 
 financeApp.controller('StaffController', function ($scope, $firebaseArray) {
-    var rootRef = new Firebase("https://financeapp2.firebaseio.com");
+    var rootRef = new Firebase(ROOTREF);
     $scope.AddRec = function () {
         rootRef.child('Staff').push($scope.Staff);
         $scope.Staff = null;
@@ -110,7 +114,7 @@ financeApp.controller('StaffController', function ($scope, $firebaseArray) {
 });
 
 financeApp.controller('TargetController', function ($scope, $firebaseArray) {
-    var rootRef = new Firebase("https://financeapp2.firebaseio.com");
+    var rootRef = new Firebase(ROOTREF);
     $scope.AddRec = function () {
         rootRef.child('Target').push($scope.Target);
         $scope.Target = null;
@@ -119,7 +123,7 @@ financeApp.controller('TargetController', function ($scope, $firebaseArray) {
 
 
 financeApp.controller('VendorController', function ($scope, $firebaseArray) {
-    var rootRef = new Firebase("https://financeapp2.firebaseio.com");
+    var rootRef = new Firebase(ROOTREF);
     $scope.AddStaff = function () {
         rootRef.child('Vendor').push($scope.Vendor);
         $scope.Vendor = null;

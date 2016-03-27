@@ -5,12 +5,16 @@
         <br />Amount
         <input type="text" name="Amount" ng-model="LoanProposal.Amount" />
         <br />CenterName
-        <input type="text" name="CenterName" ng-model="LoanProposal.CenterName" />
+        <select ng-model="LoanProposal.ClientId">
+            <option ng-repeat="ctr in centerData" value="{{ctr.$id}}">{{ctr.center_name}}</option>
+        </select>        
+        <!--<input type="text" name="CenterName" ng-model="LoanProposal.CenterName" />-->
         <br />ClientId
-        <!--<input type="text" name="ClientId" ng-model="LoanProposal.ClientId" />-->
         <select ng-model="LoanProposal.ClientId">
             <option ng-repeat="clnt in clientData" value="{{clnt.$id}}">{{clnt.ClientName}}</option>
-        </select>
+        </select>        
+        <!--<input type="text" name="ClientId" ng-model="LoanProposal.ClientId" />-->
+
         <br />ClientName
         <input type="text" name="ClientName" ng-model="LoanProposal.ClientName" />
         <br />Comment
@@ -24,13 +28,16 @@
         <br />Model
         <input type="text" name="Model" ng-model="LoanProposal.Model" />
         <br />ProposalDate
-        <input type="text" name="ProposalDate" ng-model="LoanProposal.ProposalDate" />
+        <input type="date" name="ProposalDate" ng-model="LoanProposal.ProposalDate" />
         <br />ProposalId
         <input type="text" name="ProposalId" ng-model="LoanProposal.ProposalId" />
         <br />SequenceId
         <input type="text" name="SequenceId" ng-model="LoanProposal.SequenceId" />
         <br />StaffName
-        <input type="text" name="StaffName" ng-model="LoanProposal.StaffName" />
+        <select ng-model="LoanProposal.StaffId">
+            <option ng-repeat="stf in staffData" value="{{stf.$id}}">{{stf.staff_name}}</option>
+        </select>        
+        <!--<input type="text" name="StaffName" ng-model="LoanProposal.StaffName" />-->
         <br />UnitName
         <input type="text" name="UnitName" ng-model="LoanProposal.UnitName" />
         <br />Vendor
